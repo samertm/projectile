@@ -1443,6 +1443,11 @@ With a prefix ARG invalidates the cache first."
                (not (time-less-p file1-atime file2-atime))))
            files)))
 
+(defun projectile-find-root-dir ()
+  "Jump to a project's root directory."
+  (dired (projectile-project-root))
+  (run-hooks 'projectile-find-dir-hook))
+
 (defun projectile-find-dir (&optional arg)
   "Jump to a project's directory using completion.
 
